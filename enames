@@ -1,0 +1,18 @@
+
+import openpyxl
+from openpyxl load_workbook
+wb = openpyxl.load_workbook('eNames12.31.xlsx')
+ws = wb.active
+
+for row in ws.iter_rows(min_row=1, max_col=4):
+    day, start, end, name = [cell for cell in row]
+    if all([day.value.lower() == 'Monday', start == '02:00 AM', end == '03:00 AM']):
+        print(name)  # this should come up with 'Incredible Dog Challenge' but doesn't come up with anything
+        
+
+
+    
+#I'm really looking for
+#start < 03:00 AM and end is greater than 03:00AM (including 03:30am)
+#or start is exactly 3am 
+#then print name and save in a variable Monday = name, Tuesday = name, Wednesday = name etc
